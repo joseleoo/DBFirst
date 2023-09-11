@@ -79,7 +79,7 @@ public partial class NorthwindContext : DbContext
     //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
     //    => optionsBuilder.UseSqlServer(optionsBuilder.Configuration.GetConnectionString("defaultConnection"));
-    ////=> optionsBuilder.UseSqlServer("Server=JOSELEO-PC\\SQLEXPRESS_AHORA;Database=Northwind;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
+    ////=> optionsBuilder.UseSqlServer("");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

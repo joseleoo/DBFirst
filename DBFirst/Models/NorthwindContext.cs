@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace DBFirst.Models;
@@ -75,9 +76,10 @@ public partial class NorthwindContext : DbContext
 
     public virtual DbSet<Venta> Ventas { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=JOSELEO-PC\\SQLEXPRESS_AHORA;Database=Northwind;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+    //    => optionsBuilder.UseSqlServer(optionsBuilder.Configuration.GetConnectionString("defaultConnection"));
+    ////=> optionsBuilder.UseSqlServer("Server=JOSELEO-PC\\SQLEXPRESS_AHORA;Database=Northwind;Trusted_Connection=SSPI;MultipleActiveResultSets=true;Trust Server Certificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
